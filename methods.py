@@ -5,19 +5,29 @@ def import_data(path):
     name = input('Enter Full Name:\n')
     number = input('Enter phone number:\n')
     with open(path, 'a+', encoding='utf-8') as pb:
-        pb.writelines(f'\n{name}')
-        pb.write(f'\t\t{number}')
+        pb.write(f'\n{name};{number}')
 
 
-def export_data(path):
-    print('Enter Full Name:')
-    contact = input()
+def export_data(phonebook_path, export_path):
+    name = input('Enter Full Name:\n')
+    phonebook = open(phonebook_path, 'r', encoding='utf-8')
+    check_contact = 0
+    for contact in phonebook:
+        if name in contact:
+            print(contact)
+            with open(export_path, 'w', encoding='utf-8') as pb:
+                pb.write(contact)
+        else:
+            check_contact += 1
+    if check_contact == 0:
+        print('This contact is not in the phone book')
+    phonebook.close()
 
 
 def create_phone_book(path):
     with open(path, 'a+', encoding='utf-8') as pb:
-        pb.write('\t\t---Phonebook---\n\n')
-        pb.write('|Full Name|\t\t\t|Phone number|\n')
+        pb.write('\t---Phonebook---\n')
+        pb.write('Name;Phone')
 
 
 # file = open('file.txt', 'r', encoding='utf-8')
