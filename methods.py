@@ -32,7 +32,7 @@ def export_data(contact, export_path):
 def find_contact(phonebook_path):
     name = input('Enter Full Name:\n')
     phonebook = open(phonebook_path, 'r', encoding='utf-8')
-    phonebook.seek(29)
+    phonebook.seek(28)
     found = False
     for contact in phonebook:
         if name in contact:

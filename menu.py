@@ -9,16 +9,16 @@ exp_path = 'ExportContact.txt'
 def menu(path, exp_path):
     if os.path.getsize(path) == 0:
         create_phone_book(path)
-    print('\n\t\t---Phonebook---\n\nSelect menu item:\n\tAdd contact: number "1"\n\tFind contact: number "2"\n\tShow phonebook: number "3"\n\tExit program: any another key.')
+    print('\n\t\t---Phonebook---\n\nSelect menu item:\n\tAdd contact: number "1"\n\tFind contact: number "2"\n\tShow phonebook: number "3"\n\tExit program: number "4"')
     choise = 0
-    while choise < 1 or choise > 3:
+    while choise < 1 or choise > 4:
         try:
             choise = int(input('Enter number:\t'))
         except ValueError:
             print('Incorrect data! You must enter number, try again!')
             continue
-        if choise < 1 or choise > 3:
-            print('You must enter 1 or 2, try again!')
+        if choise < 1 or choise > 4:
+            print('You must enter from 1 to 4, try again!')
 
     if choise == 1:
         import_data(path)

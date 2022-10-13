@@ -1,7 +1,7 @@
 from menu import menu
 
 path = 'PhoneBook.csv'
-exp_path = 'ExportContact.txt'
+export_path = 'ExportContact.txt'
 
 if __name__ == '__main__':
-    menu(path, exp_path)
+    menu(path, export_path)
