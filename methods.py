@@ -56,12 +56,3 @@ def show_phonebook(path):
     for line in phonebook:
         print(line)
     phonebook.close
-# file = open('file.txt', 'r', encoding='utf-8')
-# file.close
-# if os.path.getsize('file.txt') == 0:
-#     print('empty')
-# else:
-#     print('fill')
-
-
-# print(os.path.getsize('file.txt'))
